@@ -27,7 +27,31 @@ public class IntPrepSolutions {
         return minJumps;
     }
 
+    static long repeatedString(String s, long n) {
+        long result = 0;
+        int numberOfAs = 0;
+        long remainingChars = n%s.length();
+
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == 'a')
+                numberOfAs++;
+        }
+
+        result = (n/s.length())*numberOfAs;
+
+        if( remainingChars != 0){
+           for(int i = 0; i < remainingChars; i++){
+               if(s.charAt(i) == 'a')
+                   result++;
+           }
+        }
+
+        return result;
+    }
+
     public static void main(String[] args){
-        System.out.println(jumpingOnClouds(new int[]{0, 0, 0, 1, 0, 0}));
+//        System.out.println(jumpingOnClouds(new int[]{0, 0, 0, 1, 0, 0}));
+
+        System.out.println(repeatedString("abcac", 10));
     }
 }
