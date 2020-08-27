@@ -1,6 +1,6 @@
 package com.codetests;
 
-public class IntPrepSolutions {
+public class IntPrepSolutions_WarmUp {
 
     static int jumpingOnClouds(int[] c) {
         int minJumps = 0;
