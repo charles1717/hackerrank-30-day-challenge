@@ -32,6 +32,19 @@ public class IntPrepSol_Arrays {
         return sumArray.get(15);
     }
 
+    static int[] rotLeft(int[] a, int d) {
+        int temp;
+        for(int i = 1; i <= d; i++ ){
+            for(int j = 0; j < a.length-1; j++){
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
+        return a;
+    }
+
     public static void main(String[] args){
+        System.out.println(Arrays.toString(rotLeft(new int[]{1,2,3,4,5}, 4)));
     }
 }
